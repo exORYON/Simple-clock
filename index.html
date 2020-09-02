@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="container-clock">
+        <h1 id="hours"></h1>
+        <h1 id="minutes"></h1>
+        <h1 id="seconds"></h1>
+    </div>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:linear-gradient(90deg, #b2fefa 0%,#0ed2f7 100% );
+        }
+
+        .container-clock {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.342);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 4px;
+            border: 1px solid black;
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+    </style>
+
+    <script>
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let seconds = document.getElementById('seconds');
+
+        const getTime = () => {
+            let fullTime = new Date();
+            hours.innerHTML = fullTime.getHours() +':';
+            minutes.innerHTML = fullTime.getMinutes() +':';
+            seconds.innerHTML = fullTime.getSeconds();
+        }
+
+        setInterval(getTime, 1000);
+    </script>
+</body>
+</html>
